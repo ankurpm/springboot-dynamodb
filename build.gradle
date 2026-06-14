@@ -21,12 +21,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
-    // Source: https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk
-    implementation('com.amazonaws:aws-java-sdk:1.2.1')
-    // Source: https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-dynamodb
-    implementation('com.amazonaws:aws-java-sdk-dynamodb:1.9.0')
+    implementation platform('software.amazon.awssdk:bom:2.33.3')
+
+    implementation 'software.amazon.awssdk:dynamodb'
+    implementation 'software.amazon.awssdk:auth'
+    implementation 'software.amazon.awssdk:dynamodb-enhanced'
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-validation-test'
