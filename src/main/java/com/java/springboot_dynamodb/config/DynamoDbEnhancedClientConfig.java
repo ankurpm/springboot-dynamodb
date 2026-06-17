@@ -11,7 +11,7 @@ public class DynamoDbEnhancedClientConfig {
 
     @Bean
     public DynamoDbEnhancedClient enhancedClient(
-            @Qualifier("awsClient") DynamoDbClient dynamoDbClient) {
+            DynamoDbClient dynamoDbClient) {
 
         return DynamoDbEnhancedClient.builder()
                 .dynamoDbClient(dynamoDbClient)

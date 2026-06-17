@@ -1,4 +1,4 @@
-package com.java.springboot_dynamodb.model;
+package com.java.springboot_dynamodb.dto;
 
 public record UserResponse(
         String id,

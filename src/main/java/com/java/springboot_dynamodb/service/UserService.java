@@ -1,6 +1,6 @@
 package com.java.springboot_dynamodb.service;
 
-import com.java.springboot_dynamodb.model.UserResponse;
+import com.java.springboot_dynamodb.dto.UserResponse;
 import com.java.springboot_dynamodb.repository.UserRepository;
 import com.java.springboot_dynamodb.model.User;
 import lombok.RequiredArgsConstructor;

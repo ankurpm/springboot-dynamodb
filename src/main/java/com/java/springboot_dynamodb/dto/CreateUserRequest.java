@@ -1,4 +1,4 @@
-package com.java.springboot_dynamodb.model;
+package com.java.springboot_dynamodb.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

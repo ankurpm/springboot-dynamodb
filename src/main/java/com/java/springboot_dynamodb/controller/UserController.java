@@ -1,8 +1,8 @@
 package com.java.springboot_dynamodb.controller;
 
-import com.java.springboot_dynamodb.model.CreateUserRequest;
+import com.java.springboot_dynamodb.dto.CreateUserRequest;
 import com.java.springboot_dynamodb.model.User;
-import com.java.springboot_dynamodb.model.UserResponse;
+import com.java.springboot_dynamodb.dto.UserResponse;
 import com.java.springboot_dynamodb.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

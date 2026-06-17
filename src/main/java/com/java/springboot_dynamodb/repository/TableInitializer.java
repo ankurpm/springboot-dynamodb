@@ -2,19 +2,24 @@ package com.java.springboot_dynamodb.repository;
 
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperties;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.*;
 
 @Component
 @RequiredArgsConstructor
+@ConditionalOnProperty(name = "tableinitializer", havingValue = "true")
 public class TableInitializer {
 
     private final DynamoDbClient dynamoDbClient;
 
     @PostConstruct
     public void createTable() {
+        System.out.println("*****" +
+                "Inside table initializer" +
+                "*****");
 
         try {
 
@@ -37,7 +42,8 @@ public class TableInitializer {
                             .build()
             );
 
-        } catch (ResourceInUseException ignored) {
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
     }
 }
